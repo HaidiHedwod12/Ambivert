@@ -1,0 +1,49 @@
+ambivert-landing-page/
+├── node_modules/
+├── public/
+│   ├── vite.svg
+├── src/
+│   ├── assets/
+│   │   ├── backgrounds/
+│   │   │   ├── hero-bg.jpg
+│   │   ├── gallery/
+│   │   │   ├── galon-ambivert.png
+│   │   │   ├── kesegaran-alami.png
+│   │   │   ├── momen-aktif.png
+│   │   │   ├── produksi-higienis.png
+│   │   │   ├── setiap-momen.png
+│   │   │   ├── varian-lengkap.png
+│   │   ├── logos/
+│   │   │   ├── ambivert-logo.png
+│   │   ├── products/
+│   │   │   ├── 1.5L.png
+│   │   │   ├── 330ml.png
+│   │   │   ├── 600ml.png
+│   │   │   ├── ambivert-bottle.png
+│   │   │   ├── galon.png
+│   │   ├── testimonials/
+│   │   │   ├── testimonial-1.jpg
+│   │   │   ├── testimonial-2.jpg
+│   │   │   ├── testimonial-3.jpg
+│   │   ├── react.svg
+│   ├── components/
+│   │   ├── Hero.jsx
+│   │   ├── About.jsx
+│   │   ├── Features.jsx
+│   │   ├── Gallery.jsx
+│   │   ├── ContactForm.jsx
+│   │   ├── Testimonials.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Footer.jsx
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   ├── main.jsx
+├── package.json
+├── tailwind.config.js
+├── vite.config.js
+├── README.md
+├── postcss.config.js
+├── index.html
+├── .gitignore
+├── folder-structure.txt
