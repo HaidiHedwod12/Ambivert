@@ -21,10 +21,10 @@ function ContactForm() {
 
   // Varian produk Ambivert
   const variants = [
-    { id: '330ml', name: '330ml', image: '/src/assets/products/330ml.png', price: 3500 },
-    { id: '600ml', name: '600ml', image: '/src/assets/products/600ml.png', price: 5000 },
-    { id: '1.5L', name: '1.5L', image: '/src/assets/products/1.5L.png', price: 8000 },
-    { id: '19L', name: 'Galon 19L', image: '/src/assets/products/galon.png', price: 25000 },
+    { id: '330ml', name: '330ml', image: '/public/assets/products/330ml.png', price: 3500 },
+    { id: '600ml', name: '600ml', image: '/public/assets/products/600ml.png', price: 5000 },
+    { id: '1.5L', name: '1.5L', image: '/public/assets/products/1.5L.png', price: 8000 },
+    { id: '19L', name: 'Galon 19L', image: '/public/assets/products/galon.png', price: 25000 },
   ];
 
   useEffect(() => {

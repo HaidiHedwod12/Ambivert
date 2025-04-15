@@ -7,42 +7,42 @@ const galleryImages = [
     id: 1,
     title: 'Varian Lengkap',
     description: 'Tersedia dalam 4 ukuran untuk setiap kebutuhan Anda',
-    image: '/src/assets/gallery/varian-lengkap.png', // Gambar 1
+    image: '/public/assets/gallery/varian-lengkap.png', // Gambar 1
     category: 'produk'
   },
   {
     id: 2,
     title: 'Kesegaran Alami',
     description: 'Air murni dari sumber pegunungan alami',
-    image: '/src/assets/gallery/kesegaran-alami.png', // Gambar 2
+    image: '/public/assets/gallery/kesegaran-alami.png', // Gambar 2
     category: 'alam'
   },
   {
     id: 3,
     title: 'Momen Aktif',
     description: 'Menemani aktivitas outdoor Anda',
-    image: '/src/assets/gallery/momen-aktif.png', // Gambar 3
+    image: '/public/assets/gallery/momen-aktif.png', // Gambar 3
     category: 'lifestyle'
   },
   {
     id: 4,
     title: 'Produksi Higienis',
     description: 'Diproduksi dengan standar higienis tertinggi',
-    image: '/src/assets/gallery/produksi-higienis.png', // Gambar 4
+    image: '/public/assets/gallery/produksi-higienis.png', // Gambar 4
     category: 'produksi'
   },
   {
     id: 5,
     title: 'Galon 19L',
     description: 'Praktis untuk kebutuhan rumah dan kantor',
-    image: '/src/assets/gallery/galon-ambivert.png', // Gambar 5
+    image: '/public/assets/gallery/galon-ambivert.png', // Gambar 5
     category: 'produk'
   },
   {
     id: 6,
     title: 'Setiap Momen',
     description: 'Menemani setiap momen dalam hidup Anda',
-    image: '/src/assets/gallery/setiap-momen.png', // Gambar 6
+    image: '/public/assets/gallery/setiap-momen.png', // Gambar 6
     category: 'lifestyle'
   }
 ];
