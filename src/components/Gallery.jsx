@@ -1,11 +1,6 @@
 // src/components/Gallery.jsx
 import { useEffect, useState, useRef } from 'react';
-import varianLengkap from "../assets/gallery/varian-lengkap.png";
-import kesegaranAlami from "../assets/gallery/kesegaran-alami.png";
-import momenAktif from "../assets/gallery/momen-aktif.png";
-import produksiHigienis from "../assets/gallery/produksi-higienis.png";
-import galonAmbivert from "../assets/gallery/galon-ambivert.png";
-import setiapMomen from "../assets/gallery/setiap-momen.png";
+
 
 // Catatan: Ganti path sesuai lokasi gambar Anda
 const galleryImages = [
@@ -13,42 +8,42 @@ const galleryImages = [
     id: 1,
     title: 'Varian Lengkap',
     description: 'Tersedia dalam 4 ukuran untuk setiap kebutuhan Anda',
-    image: varianLengkap,
+    image: '/images/gallery/varian-lengkap.png',
     category: 'produk'
   },
   {
     id: 2,
     title: 'Kesegaran Alami',
     description: 'Air murni dari sumber pegunungan alami',
-    image: kesegaranAlami,
+    image: '/images/gallery/kesegaran-alami.png',
     category: 'alam'
   },
   {
     id: 3,
     title: 'Momen Aktif',
     description: 'Menemani aktivitas outdoor Anda',
-    image: momenAktif,
+    image: '/images/gallery/momen-aktif.png',
     category: 'lifestyle'
   },
   {
     id: 4,
     title: 'Produksi Higienis',
     description: 'Diproduksi dengan standar higienis tertinggi',
-    image: produksiHigienis,
+    image: '/images/gallery/produksi-higienis.png',
     category: 'produksi'
   },
   {
     id: 5,
     title: 'Galon 19L',
     description: 'Praktis untuk kebutuhan rumah dan kantor',
-    image: galonAmbivert,
+    image: '/images/gallery/galon-ambivert.png',
     category: 'produk'
   },
   {
     id: 6,
     title: 'Setiap Momen',
     description: 'Menemani setiap momen dalam hidup Anda',
-    image: setiapMomen,
+    image: '/images/gallery/setiap-momen.png',
     category: 'lifestyle'
   }
 ];

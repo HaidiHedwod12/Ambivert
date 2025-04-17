@@ -6,7 +6,17 @@ import { resolve } from 'path'
 export default defineConfig({
   plugins: [react()],
   build: {
-    assetsInlineLimit: 0,
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, 'index.html'),
+      },
+      output: {
+        assetFileNames: 'assets/[name].[hash][extname]',
+        chunkFileNames: 'assets/[name].[hash].js',
+        entryFileNames: 'assets/[name].[hash].js',
+      },
+    },
+    assetsInlineLimit: 4096,
   },
   resolve: {
     alias: {

@@ -1,8 +1,5 @@
 // src/components/Testimonials.jsx
 import { useEffect, useState, useRef } from 'react';
-import testimonial1 from '../assets/testimonials/testimonial-1.jpg';
-import testimonial2 from '../assets/testimonials/testimonial-2.jpg';
-import testimonial3 from '../assets/testimonials/testimonial-3.jpg';
 
 function Testimonials() {
   const [isVisible, setIsVisible] = useState(false);
@@ -15,7 +12,7 @@ function Testimonials() {
       name: "Adi Pratama",
       role: "Pendaki Gunung",
       quote: "Ambivert selalu menemani saya saat mendaki. Kualitas air yang murni dan kemasan yang ringan membuatnya sangat praktis untuk dibawa ke mana saja. Rasanya memang beda!",
-      image: testimonial1,
+      image: "/images/testimonials/testimonial-1.jpg",
       rating: 5
     },
     {
@@ -23,7 +20,7 @@ function Testimonials() {
       name: "Dian Kusuma",
       role: "Ibu Rumah Tangga",
       quote: "Sebagai ibu, saya sangat peduli dengan kualitas air yang diminum keluarga. Ambivert memberikan ketenangan pikiran karena saya tahu airnya benar-benar dari sumber pegunungan alami.",
-      image: testimonial2,
+      image: "/images/testimonials/testimonial-2.jpg",
       rating: 5
     },
     {
@@ -31,7 +28,7 @@ function Testimonials() {
       name: "Budi Santoso",
       role: "Pemilik Cafe",
       quote: "Para pelanggan kami sangat mengapresiasi ketika kami menyajikan Ambivert. Mereka bisa merasakan perbedaan kualitas dari air mineral biasa. Pelayanan pengiriman galonnya juga sangat tepat waktu.",
-      image: testimonial3,
+      image: "/images/testimonials/testimonial-3.jpg",
       rating: 5
     }
   ];

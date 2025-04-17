@@ -1,7 +1,5 @@
 // src/components/Hero.jsx
 import { useEffect, useState } from 'react';
-import heroBg from "../assets/backgrounds/hero-bg.jpg";
-import ambivertBottle from "../assets/products/ambivert-bottle.png";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -16,7 +14,7 @@ const Hero = () => {
       {/* Background dengan overlay blur */}
       <div className="absolute inset-0">
         <img 
-          src={heroBg} 
+          src="/images/backgrounds/hero-bg.jpg"
           alt="Ambivert Mountain Spring Water" 
           className="w-full h-full object-cover"
         />
@@ -58,7 +56,7 @@ const Hero = () => {
               onMouseLeave={() => setIsHovered(false)}
             >
               <img 
-                src={ambivertBottle} 
+                src="/images/products/ambivert-bottle.png"
                 alt="Ambivert Bottle" 
                 className="h-[800px] object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.5)]"
               />
