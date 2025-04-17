@@ -76,7 +76,7 @@ function Testimonials() {
     <section 
       id="testimoni" 
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden py-24"
+      className="relative min-h-screen overflow-hidden py-16 md:py-24"
     >
       {/* Dynamic Gradient Background - berbeda dari About & Features */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#003b57] via-[#00506b] to-[#006680] z-0"></div>
@@ -118,20 +118,20 @@ function Testimonials() {
 
       <div className="container mx-auto px-4 z-10 relative">
         {/* Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-12 md:mb-20">
           <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <h2 className="text-6xl font-bold text-white mb-4 testimonial-glow">
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-4 testimonial-glow">
               Testimoni
             </h2>
             <div className="w-32 h-1 bg-gradient-to-r from-[#83e4e2] via-[#83e4e2] to-transparent mx-auto rounded-full"></div>
-            <p className="text-[#83e4e2]/80 mt-6 text-xl max-w-2xl mx-auto">
+            <p className="text-[#83e4e2]/80 mt-6 text-lg md:text-xl max-w-2xl mx-auto px-4">
               Apa kata mereka tentang Ambivert
             </p>
           </div>
         </div>
         
         {/* Desktop Testimonial Cards */}
-        <div className="hidden md:grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={testimonial.id}
@@ -179,8 +179,8 @@ function Testimonials() {
         </div>
         
         {/* Mobile Testimonial Carousel */}
-        <div className="md:hidden relative">
-          <div className="overflow-hidden px-4">
+        <div className="md:hidden relative px-4">
+          <div className="overflow-hidden">
             <div 
               className="flex transition-transform duration-700 ease-in-out"
               style={{ transform: `translateX(-${activeSlide * 100}%)` }}
@@ -188,7 +188,7 @@ function Testimonials() {
               {testimonials.map((testimonial) => (
                 <div 
                   key={testimonial.id}
-                  className="min-w-full px-4"
+                  className="min-w-full px-2"
                 >
                   <div className="bg-[#ffffff08] backdrop-filter backdrop-blur-md border border-white/10 p-6 rounded-2xl shadow-xl">
                     {/* Rating stars */}
@@ -227,14 +227,15 @@ function Testimonials() {
             </div>
           </div>
           
-          {/* Carousel indicators */}
-          <div className="flex justify-center space-x-2 mt-6">
+          {/* Mobile Navigation Dots */}
+          <div className="flex justify-center mt-6 gap-2">
             {testimonials.map((_, index) => (
               <button
                 key={index}
                 onClick={() => setActiveSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${activeSlide === index ? 'bg-[#83e4e2] w-6' : 'bg-white/30 hover:bg-white/50'}`}
-                aria-label={`Go to slide ${index + 1}`}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  activeSlide === index ? 'bg-[#83e4e2] w-4' : 'bg-white/30'
+                }`}
               />
             ))}
           </div>

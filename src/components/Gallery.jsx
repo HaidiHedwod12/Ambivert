@@ -146,24 +146,24 @@ function Gallery() {
       <div className="container mx-auto px-4 z-10 relative">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className={`text-6xl font-bold text-white inline-block relative pb-2 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+          <h2 className={`text-4xl md:text-6xl font-bold text-white inline-block relative pb-2 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
             <span className="gallery-title-glow">
               Galeri Produk
               <div className="w-full h-1 bg-gradient-to-r from-[#83e4e2] via-[#83e4e2] to-transparent mt-2 rounded-full"></div>
             </span>
           </h2>
-          <p className="text-[#83e4e2]/80 mt-4 text-xl max-w-2xl mx-auto">
+          <p className="text-[#83e4e2]/80 mt-4 text-lg md:text-xl max-w-2xl mx-auto px-4">
             Jelajahi ragam produk Ambivert dalam berbagai momen dan ukuran
           </p>
         </div>
         
-        {/* Filter Buttons */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        {/* Filter Buttons - Scrollable pada mobile */}
+        <div className="flex flex-nowrap md:flex-wrap overflow-x-auto md:overflow-visible justify-start md:justify-center gap-3 mb-12 px-4 pb-4 md:pb-0">
           {['semua', 'produk', 'alam', 'lifestyle', 'produksi'].map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-5 py-2 rounded-full text-white backdrop-blur-sm transition-all ${
+              className={`whitespace-nowrap px-5 py-2 rounded-full text-white backdrop-blur-sm transition-all ${
                 selectedCategory === category 
                   ? 'bg-[#00a0b0] shadow-lg shadow-[#00a0b0]/20' 
                   : 'bg-white/10 hover:bg-white/20'
@@ -175,11 +175,11 @@ function Gallery() {
         </div>
         
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-6xl mx-auto px-4">
           {filteredImages.map((item, index) => (
             <div 
               key={item.id}
-              className={`gallery-card bg-black/20 backdrop-filter backdrop-blur-sm rounded-xl overflow-hidden shadow-xl relative transition-all duration-700 transform opacity-0 translate-y-10`}
+              className="gallery-card bg-black/20 backdrop-filter backdrop-blur-sm rounded-xl overflow-hidden shadow-xl relative transition-all duration-700 transform opacity-0 translate-y-10"
               style={{ transitionDelay: `${index * 100}ms` }}
               onMouseEnter={() => setActiveIndex(index)}
               onMouseLeave={() => setActiveIndex(null)}

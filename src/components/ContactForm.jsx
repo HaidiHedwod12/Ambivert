@@ -132,7 +132,7 @@ function ContactForm() {
     <section 
       id="pemesanan" 
       ref={sectionRef}
-      className="relative min-h-screen py-24 overflow-hidden"
+      className="relative min-h-screen py-16 md:py-24 overflow-hidden"
     >
       {/* Dynamic Gradient Background - berbeda dari section lain */}
       <div className="absolute inset-0 bg-gradient-to-b from-[#004a67] via-[#005f7a] to-[#00718c] z-0"></div>
@@ -171,229 +171,187 @@ function ContactForm() {
       </div>
 
       <div className="container mx-auto px-4 z-10 relative">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <div className={`transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <h2 className="text-6xl font-bold text-white mb-4 order-title-glow">
-              Pemesanan
-            </h2>
-            <div className="w-32 h-1 bg-gradient-to-r from-[#83e4e2] via-[#83e4e2] to-transparent mx-auto rounded-full"></div>
-            <p className="text-[#83e4e2]/80 mt-6 text-xl max-w-2xl mx-auto">
-              Dapatkan kesegaran Ambivert langsung diantar ke lokasi Anda
-            </p>
-          </div>
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Form Side */}
-          <div className={`relative transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="bg-white/10 backdrop-filter backdrop-blur-md p-8 rounded-2xl border border-white/20 shadow-xl">
-              {submitStatus && (
-                <div className={`mb-6 p-4 rounded-lg ${submitStatus.success ? 'bg-green-500/20 text-green-100' : 'bg-red-500/20 text-red-100'}`}>
-                  {submitStatus.message}
-                </div>
-              )}
-              
-              <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-4">
-                  {/* Nama */}
-                  <div>
-                    <label className="block text-white mb-2 font-medium" htmlFor="name">Nama Lengkap</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:border-transparent text-white"
-                      required
-                      placeholder="Masukkan nama lengkap Anda"
-                    />
+        <div className="max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+            {/* Form Section */}
+            <div className="order-2 lg:order-1">
+              <div className={`bg-white/5 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-xl border border-white/10 transition-all duration-1000 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                {submitStatus && (
+                  <div className={`mb-6 p-4 rounded-lg ${submitStatus.success ? 'bg-green-500/20 text-green-100' : 'bg-red-500/20 text-red-100'}`}>
+                    {submitStatus.message}
                   </div>
-                  
-                  {/* Email & Phone side by side */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                )}
+                
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-4">
+                    {/* Nama */}
                     <div>
-                      <label className="block text-white mb-2 font-medium" htmlFor="email">Email</label>
+                      <label className="block text-white mb-2 font-medium" htmlFor="name">Nama Lengkap</label>
                       <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
+                        type="text"
+                        id="name"
+                        name="name"
+                        value={formData.name}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:border-transparent text-white"
                         required
-                        placeholder="email@example.com"
+                        placeholder="Masukkan nama lengkap Anda"
                       />
                     </div>
+                    
+                    {/* Email & Phone side by side */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-white mb-2 font-medium" htmlFor="email">Email</label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:border-transparent text-white"
+                          required
+                          placeholder="email@example.com"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-white mb-2 font-medium" htmlFor="phone">No. Telepon</label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:border-transparent text-white"
+                          required
+                          placeholder="08xxxxxxxxxx"
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Alamat */}
                     <div>
-                      <label className="block text-white mb-2 font-medium" htmlFor="phone">No. Telepon</label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        name="phone"
-                        value={formData.phone}
+                      <label className="block text-white mb-2 font-medium" htmlFor="address">Alamat Pengiriman</label>
+                      <textarea
+                        id="address"
+                        name="address"
+                        value={formData.address}
                         onChange={handleChange}
                         className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:border-transparent text-white"
                         required
-                        placeholder="08xxxxxxxxxx"
+                        placeholder="Masukkan alamat lengkap pengiriman"
+                        rows={3}
+                      />
+                    </div>
+                    
+                    {/* Variant & Quantity side by side */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-white mb-2 font-medium" htmlFor="variant">Varian Produk</label>
+                        <select
+                          id="variant"
+                          name="variant"
+                          value={formData.variant}
+                          onChange={handleChange}
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:border-transparent text-white"
+                          required
+                        >
+                          {variants.map(variant => (
+                            <option key={variant.id} value={variant.id}>{variant.name}</option>
+                          ))}
+                        </select>
+                      </div>
+                      <div>
+                        <label className="block text-white mb-2 font-medium" htmlFor="quantity">Jumlah</label>
+                        <input
+                          type="number"
+                          id="quantity"
+                          name="quantity"
+                          value={formData.quantity}
+                          onChange={handleChange}
+                          min="1"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:border-transparent text-white"
+                          required
+                        />
+                      </div>
+                    </div>
+                    
+                    {/* Message */}
+                    <div>
+                      <label className="block text-white mb-2 font-medium" htmlFor="message">Catatan (Opsional)</label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={handleChange}
+                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:border-transparent text-white"
+                        placeholder="Tambahkan catatan khusus untuk pesanan Anda"
+                        rows={2}
                       />
                     </div>
                   </div>
                   
-                  {/* Alamat */}
-                  <div>
-                    <label className="block text-white mb-2 font-medium" htmlFor="address">Alamat Pengiriman</label>
-                    <textarea
-                      id="address"
-                      name="address"
-                      value={formData.address}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:border-transparent text-white"
-                      required
-                      placeholder="Masukkan alamat lengkap pengiriman"
-                      rows={3}
-                    />
-                  </div>
-                  
-                  {/* Variant & Quantity side by side */}
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-white mb-2 font-medium" htmlFor="variant">Varian Produk</label>
-                      <select
-                        id="variant"
-                        name="variant"
-                        value={formData.variant}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:border-transparent text-white"
-                        required
-                      >
-                        {variants.map(variant => (
-                          <option key={variant.id} value={variant.id}>{variant.name}</option>
-                        ))}
-                      </select>
-                    </div>
-                    <div>
-                      <label className="block text-white mb-2 font-medium" htmlFor="quantity">Jumlah</label>
-                      <input
-                        type="number"
-                        id="quantity"
-                        name="quantity"
-                        value={formData.quantity}
-                        onChange={handleChange}
-                        min="1"
-                        className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:border-transparent text-white"
-                        required
-                      />
+                  {/* Total harga */}
+                  <div className="bg-[#00506b] p-4 rounded-lg">
+                    <div className="flex justify-between items-center">
+                      <span className="text-white">Total :</span>
+                      <span className="text-[#83e4e2] text-xl font-bold">Rp {total.toLocaleString('id-ID')}</span>
                     </div>
                   </div>
                   
-                  {/* Message */}
-                  <div>
-                    <label className="block text-white mb-2 font-medium" htmlFor="message">Catatan (Opsional)</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:border-transparent text-white"
-                      placeholder="Tambahkan catatan khusus untuk pesanan Anda"
-                      rows={2}
-                    />
-                  </div>
-                </div>
-                
-                {/* Total harga */}
-                <div className="bg-[#00506b] p-4 rounded-lg">
-                  <div className="flex justify-between items-center">
-                    <span className="text-white">Total :</span>
-                    <span className="text-[#83e4e2] text-xl font-bold">Rp {total.toLocaleString('id-ID')}</span>
-                  </div>
-                </div>
-                
-                {/* Submit button */}
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full py-4 px-6 bg-gradient-to-r from-[#00a0b0] to-[#008191] hover:from-[#00b1c2] hover:to-[#0091a3] text-white text-lg font-bold rounded-lg shadow-lg transition-all duration-300 hover:shadow-[0_5px_15px_rgba(0,160,176,0.4)] focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:ring-opacity-50 disabled:opacity-70 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98]"
-                >
-                  {isSubmitting ? 'Memproses...' : 'Kirim Pesanan'}
-                </button>
-              </form>
-            </div>
-          </div>
-          
-          {/* Product Display Side */}
-          <div className={`flex flex-col items-center justify-center transition-all duration-1000 delay-500 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-            <div className="relative">
-              {/* Product image with reflection */}
-              <div className="relative animate-float-slow mb-6">
-                <img 
-                  src={currentVariant.image}
-                  alt={`Ambivert ${currentVariant.name}`}
-                  className="max-h-[400px] object-contain mx-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.25)]"
-                  onError={(e) => {
-                    e.target.src = 'https://via.placeholder.com/300x400?text=Ambivert';
-                  }}
-                />
-                
-                {/* Reflection effect */}
-                <div className="absolute bottom-0 left-0 right-0 flex justify-center">
-                  <div className="w-[80%] h-[20px] bg-[#83e4e2]/20 blur-md rounded-full"></div>
-                </div>
-              </div>
-              
-              {/* Product details */}
-              <div className="text-center">
-                <h3 className="text-3xl font-bold text-white mb-2">Ambivert {currentVariant.name}</h3>
-                <p className="text-[#83e4e2] text-xl font-medium mb-4">Rp {currentVariant.price.toLocaleString('id-ID')}</p>
-                <p className="text-white/80 max-w-sm mx-auto">
-                  Air mineral segar dari sumber pegunungan alami, tersedia dalam berbagai ukuran untuk kebutuhan Anda.
-                </p>
-              </div>
-              
-              {/* Water splash effect */}
-              <div className="absolute bottom-0 left-0 right-0 flex justify-center pointer-events-none">
-                <div className="animate-splash opacity-0">
-                  <svg width="200" height="50" viewBox="0 0 200 50" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M198.6 20.8c-7.3 5.3-15.2 9.7-23.6 13.3-9.1 3.7-18.5 5.4-28.1 7.6-7.4 1.8-14.9 3.1-22.4 4.3-6.6 1.1-13.2 1.7-19.9 2.2-7.7 0.6-15.3 0.8-23 0.7-3.8 0-7.6-0.1-11.5-0.2-3.8-0.1-7.6-0.4-11.3-0.7-14.9-1.2-29.3-3.5-42.8-8.4C8.7 36.8 2.3 33.7 0 33.3c3.3-3.3 9.5-7.2 14.7-10 5.4-2.8 11.2-5.1 17.1-7 6.2-2 12.5-3.5 18.9-4.6 6.5-1.1 13.1-1.8 19.8-2.2 6.9-0.5 13.7-0.6 20.6-0.5 6.7 0.1 13.4 0.4 20.1 0.9 6.7 0.5 13.4 1.3 20 2.3 10.1 1.7 20.1 4.4 29.9 7.6 9.9 3.3 20.1 7.5 29.3 12.9 2.2 1.5 4.5 2.9 6.7 4.2 2.2 1.3 4.3 2.9 6.4 4.6C207.5 10.1 198.6 20.8 198.6 20.8z" fill="#83e4e2" />
-                  </svg>
-                </div>
+                  {/* Submit button */}
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full py-4 px-6 bg-gradient-to-r from-[#00a0b0] to-[#008191] hover:from-[#00b1c2] hover:to-[#0091a3] text-white text-lg font-bold rounded-lg shadow-lg transition-all duration-300 hover:shadow-[0_5px_15px_rgba(0,160,176,0.4)] focus:outline-none focus:ring-2 focus:ring-[#83e4e2] focus:ring-opacity-50 disabled:opacity-70 disabled:cursor-not-allowed transform hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    {isSubmitting ? 'Memproses...' : 'Kirim Pesanan'}
+                  </button>
+                </form>
               </div>
             </div>
             
-            {/* Variant thumbnails */}
-            <div className="flex justify-center space-x-4 mt-8">
-              {variants.map(variant => (
-                <button
-                  key={variant.id}
-                  onClick={() => {
-                    setSelectedVariant(variant.id);
-                    setFormData(prev => ({...prev, variant: variant.id}));
-                  }}
-                  className={`p-2 rounded-lg transition-all duration-300 ${
-                    selectedVariant === variant.id 
-                      ? 'bg-[#00a0b0] ring-2 ring-[#83e4e2]' 
-                      : 'bg-white/10 hover:bg-white/20'
-                  }`}
-                >
-                  <img 
-                    src={variant.image} 
-                    alt={variant.name}
-                    className="w-16 h-20 object-contain"
-                    onError={(e) => {
-                      e.target.src = 'https://via.placeholder.com/64x80?text=A';
-                    }}
-                  />
-                  <span className={`block text-sm mt-1 ${
-                    selectedVariant === variant.id 
-                      ? 'text-white font-medium' 
-                      : 'text-white/70'
-                  }`}>
-                    {variant.name}
-                  </span>
-                </button>
-              ))}
+            {/* Product Preview */}
+            <div className="order-1 lg:order-2">
+              <div className={`text-center transition-all duration-1000 delay-300 transform ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+                {/* Product Variant Selection */}
+                <div className="flex flex-wrap justify-center gap-4 mb-8">
+                  {variants.map((variant) => (
+                    <button
+                      key={variant.id}
+                      onClick={() => setSelectedVariant(variant.id)}
+                      className={`px-4 py-2 rounded-full text-white backdrop-blur-sm transition-all ${
+                        selectedVariant === variant.id 
+                          ? 'bg-[#00a0b0] shadow-lg shadow-[#00a0b0]/20' 
+                          : 'bg-white/10 hover:bg-white/20'
+                      }`}
+                    >
+                      {variant.name}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Product Display */}
+                <div className="relative">
+                  <div className="relative animate-float-slow mb-6">
+                    <img 
+                      src={currentVariant.image}
+                      alt={`Ambivert ${currentVariant.name}`}
+                      className="max-h-[300px] md:max-h-[400px] object-contain mx-auto drop-shadow-[0_10px_20px_rgba(0,0,0,0.25)]"
+                    />
+                  </div>
+                  
+                  {/* Product Info */}
+                  <div className="text-center">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                      Ambivert {currentVariant.name}
+                    </h3>
+                    <p className="text-[#83e4e2] text-xl font-medium mb-4">
+                      Rp {currentVariant.price.toLocaleString('id-ID')}
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
