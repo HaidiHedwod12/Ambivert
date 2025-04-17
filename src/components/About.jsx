@@ -1,6 +1,9 @@
 // src/components/About.jsx
 import { useEffect, useState, useRef } from 'react';
-import ambivertLogo from '/public/assets/logos/ambivert-logo.png';
+import ambivertLogo from '../assets/logos/ambivert-logo.png';
+import testimonial1 from '../assets/testimonials/testimonial-1.jpg';
+import testimonial2 from '../assets/testimonials/testimonial-2.jpg';
+import testimonial3 from '../assets/testimonials/testimonial-3.jpg';
 
 function About() {
   const [isVisible, setIsVisible] = useState(false);
