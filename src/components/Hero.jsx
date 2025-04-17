@@ -1,7 +1,7 @@
 // src/components/Hero.jsx
 import { useEffect, useState } from 'react';
-const heroBg = "/public/assets/backgrounds/hero-bg.jpg";
-const ambivertBottle = "/public/assets/products/ambivert-bottle.png";
+import heroBg from "../assets/backgrounds/hero-bg.jpg";
+import ambivertBottle from "../assets/products/ambivert-bottle.png";
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);

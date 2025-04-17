@@ -1,6 +1,10 @@
 // src/components/ContactForm.jsx
 import { useState, useRef, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
+import bottle330ml from "../assets/products/330ml.png";
+import bottle600ml from "../assets/products/600ml.png";
+import bottle1_5L from "../assets/products/1.5L.png";
+import bottleGalon from "../assets/products/galon.png";
 
 function ContactForm() {
   const formRef = useRef();
@@ -21,10 +25,10 @@ function ContactForm() {
 
   // Varian produk Ambivert
   const variants = [
-    { id: '330ml', name: '330ml', image: '/public/assets/products/330ml.png', price: 3500 },
-    { id: '600ml', name: '600ml', image: '/public/assets/products/600ml.png', price: 5000 },
-    { id: '1.5L', name: '1.5L', image: '/public/assets/products/1.5L.png', price: 8000 },
-    { id: '19L', name: 'Galon 19L', image: '/public/assets/products/galon.png', price: 25000 },
+    { id: '330ml', name: '330ml', image: bottle330ml, price: 3500 },
+    { id: '600ml', name: '600ml', image: bottle600ml, price: 5000 },
+    { id: '1.5L', name: '1.5L', image: bottle1_5L, price: 8000 },
+    { id: '19L', name: 'Galon 19L', image: bottleGalon, price: 25000 },
   ];
 
   useEffect(() => {
